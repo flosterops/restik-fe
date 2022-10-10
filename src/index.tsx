@@ -1,15 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { PageBuilder } from "./components/PageBuilder";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import { ConfigProvider } from "antd";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <ConfigProvider componentSize="large">
+      <Provider store={store}>
+        <PageBuilder />
+      </Provider>
+    </ConfigProvider>
   </React.StrictMode>
 );
 
