@@ -4,12 +4,22 @@ import { Header } from "../Header";
 import "./index.scss";
 import { Layout } from "antd";
 
-export const LayoutWrapper = ({ children }: PropsWithChildren) => {
+interface Props {
+  withAside?: boolean;
+}
+
+export const LayoutWrapper = ({
+  children,
+  withAside = false,
+}: PropsWithChildren<Props>) => {
   return (
     <Layout className="layout-wrapper">
-      <Layout.Sider>
-        <Sidebar />
-      </Layout.Sider>
+      {withAside && (
+        <Layout.Sider>
+          <Sidebar />
+        </Layout.Sider>
+      )}
+
       <Layout>
         <Layout.Header>
           <Header />

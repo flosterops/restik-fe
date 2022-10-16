@@ -2,5 +2,5 @@ import React from "react";
 import { Col } from "antd";
 
 export const OrganizationPage = () => {
-  return <Col></Col>;
+  return <Col>OrganizationPage</Col>;
 };

@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { PropsWithChildren, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/reducers/user/actions";
+import { Col } from "antd";
 
-export const HomePage = () => {
+export const HomePage = ({ children }: PropsWithChildren) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     login("Denys", "Veklych")(dispatch);
   }, [dispatch]);
 
-  return <div>Home page</div>;
+  return <Col>HomePage</Col>;
 };
